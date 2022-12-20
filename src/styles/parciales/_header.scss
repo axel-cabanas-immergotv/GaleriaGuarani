@@ -1,0 +1,260 @@
+@import './animations';
+
+header {
+    padding: 30px 0;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease;
+
+    .header__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-menu {
+            &:hover{
+                color: $color-bg;
+            }
+        }
+
+        &-logo {
+            transition: all 0.5s ease;
+            &:hover {
+                transform: rotate(360deg);
+            }
+        }
+    }
+    &.fixer {
+        background-color: #111;
+        padding: 20px 0;
+    }
+}
+
+.trigger__container {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+
+    .trigger {
+        .hamb-1 {
+            top: 6px;
+            transform: rotate(45deg);
+            background-color: #eee;
+        }
+        .hamb-2 {
+            opacity: 0;
+        }
+        .hamb-3 {
+            top: 6px;
+            background-color: #eee;
+            transform: rotate(-45deg);
+        }
+    }
+}
+.trigger {
+    cursor: pointer;
+    font-family: 'Heebo', sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    padding: 10px;
+    padding-right: 65px;
+    position: relative;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    transition: all .3s ease;
+
+    & p {
+        line-height: 1;
+    }
+    .hamb {
+        width: 50px;
+        height: 15px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -7px;
+        margin-top: -7.5px;
+
+        &-1 {
+            position: absolute;
+            width: 50px;
+            height: 4px;
+            background-color: #aaa;
+            left: 0;
+            transition: all .3s ease;
+            top: 0;
+        }
+        &-2 {
+            @extend .hamb-1;
+            top: 8px;
+        }
+        &-3 {
+            @extend .hamb-1;
+            top: 16px;
+        }
+    }
+}
+.active {
+    color: $color-bg;
+}
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-overlay {
+        display: block;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        background-color: rgba(0, 0, 0, 0.8);
+        top: 0;
+        left: 0;
+        transition: all 1s .7s cubic-bezier(0.02, 0.19, 0, 0.96);
+        height: 100vh;
+        transform: translateX(-102%);
+        cursor: pointer;
+
+        &.open {
+            transition: all 1s cubic-bezier(0.02, 0.19, 0, 0.96);
+            transform: translateX(0%);
+        }
+    }
+    &-content {
+        overflow: auto;
+        transition: all 1s .3s cubic-bezier(0.02, 0.19, 0, 0.96);
+        transform: translateX(102%);
+        position: fixed;
+        height: 100vh;
+        width: 55%;
+        z-index: 999;
+        background-color: #111;
+        right: 0;
+        top: 0;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        -o-flex-direction: column;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &.open {
+            transition: all 0.5s cubic-bezier(0.02, 0.19, 0, 0.96);
+            transform: translateX(0%);
+        }
+        .Navbar__menu-container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            padding-top: 122px;
+            padding-bottom: 35px;
+            overflow-x: hidden;
+            overflow-y: hidden;
+
+            
+        }
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #c9bd97;
+        }
+    }
+    
+}
+
+.nav_menu {
+    
+    ul {
+        li {
+            margin-bottom: 30px;
+            transition: all .8s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    
+    .menu-item {
+        &-link {
+            background-image: linear-gradient( to right, $color-bg, $color-bg 50%, #fff 50% );
+            background-size: 200% 100%;
+            background-position: -100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.5s ease-in-out;
+            position: relative;
+            font-family: 'Heebo', sans-serif;
+            font-size: 36px;
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            line-height: 1;
+            &:before {
+                content: '';
+                background: $color-bg;
+                display: block;
+                position: absolute;
+                bottom: -3px;
+                left: 0;
+                width: 0;
+                height: 3px;
+            }
+            
+        }
+        &:nth-child(5) .menu-item-link::after {
+            content: '';
+            position: absolute;
+            left: 100%;
+            margin-left: 10px;
+            width: 4px;
+            height: 4px;
+            background-color: $color-bg;
+            border-radius: 100%;
+            top: 50%;
+            margin-top: -2px;
+        }
+        &-submenu {
+            opacity: 0;
+            transition: all 0.8s ease;
+            transform: translateX(250%);
+            height: 0;
+            &.open {
+                height: 156px;
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }   
+    }
+    
+    & a:hover {
+        background-position: 0;
+        background-image: linear-gradient( to right, $color-bg, $color-bg 50%, #fff 50% );
+
+        &::before {
+            width: 100%;
+        }
+    }
+}
+.footer {
+    font-size: 15px;
+    transition: all 0.8s ease;
+    p{
+        &:last-child {
+            padding-left: 16px;
+        }
+    }
+}

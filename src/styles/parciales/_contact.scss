@@ -1,0 +1,53 @@
+
+
+.contact__container {
+    .contact {
+        &__title {
+            color: #fff;
+        }
+        &__phone {
+            &-card {
+                display: flex;
+                align-items: center;
+    
+                &-icon {
+                    @extend .btn-file-icon;
+                    color: #ccc;
+                    padding-right: 20px;
+                }
+                &-item {
+                    div {
+                        transition: all 0.5s ease-in-out;
+                        padding: 5px;
+
+                        &:hover {
+                            box-shadow: 0px 3px 6px 3px #000;
+                            transition: all 0.5s ease-in-out;
+                            color: #fff;
+                        }
+                        p {
+                            text-shadow: 0px 0px 3px #fff9;
+                        }
+                    }
+                }
+                a {
+                    background-image: linear-gradient(to right, #E4D192, #E4D192 50%, #fff 50%);
+                    background-size: 200% 100%;
+                    background-position: -100%;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    transition: all 0.5s ease-in-out;
+                    position: relative;
+                    text-decoration: none;
+                    font-size: 18px;
+    
+                    &:hover {
+                        background-position: 0;
+                        background-image: linear-gradient(to right, #E4D192, #E4D192 50%, #fff 50%);
+                    }
+                }
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,97 @@
+@import "./animations";
+
+main {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+.main__container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .hero {
+
+        &__content {
+            text-align: center;
+            padding-top: 50px;
+
+            a {
+                font-size: 20px;
+                border: 2px solid #fff;
+                padding: 5px 10px;
+                border-radius: 5px;
+                box-shadow: 5px 7px 0px #fff;
+
+                &:hover {
+                    color: #fff;
+                    border-color: #fff;
+                    box-shadow: 0 0 6px 0px #fff;
+                    text-shadow: 0 0 4px #fff;
+                }
+            }
+
+            img {
+              margin: 0 0 15px 0;
+            }
+            
+            &-text {
+                padding: 0;
+                font-size: 40px;
+                line-height: 1.3333;
+                max-width: 500px;
+                margin: 0 auto;
+                opacity: 1;
+                font-family: GG;
+                color: #fff;
+                animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+            }
+            &-slider {
+                height: auto;
+                margin: auto;
+                overflow: hidden;
+                position: relative;
+                width: 960px;
+
+                &::before, &::after {
+                    background: linear-gradient(to right, #111 0%, #1110 100%);
+                    content: "";
+                    height: 95px;
+                    position: absolute;
+                    width: 200px;
+                    z-index: 2;
+                }
+                &::after {
+                    right: 0;
+                    top: 0;
+                    transform: rotateZ(180deg);
+                }
+                &::before {
+                    left: 0;
+                    top: 0;
+                }
+
+                &-track {
+                    -webkit-animation: scroll 70s linear infinite;
+                    animation: scroll 70s linear infinite;
+                    display: flex;
+                    width: calc(250px * 14);
+                    align-items: center;
+
+                    .slide {
+                        height: auto;
+                        width: 250px;
+                    }
+                }
+            }
+        }
+    }
+}

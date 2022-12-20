@@ -1,0 +1,5 @@
+@import "./animations";
+
+.loading-transition {
+    animation: loadingTransition 1s both 0.3s;
+}

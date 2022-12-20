@@ -1,0 +1,220 @@
+@media screen and (max-width: 1400px){
+    .box-container, .networks {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 1040px){
+    .box-container, .networks {
+        padding: 0 20px;
+    }
+    .main__container .hero__content-title {
+        font-size: 40px;
+    }
+    .about__info-content{
+        &-img {
+            width: 40%;
+        }
+
+        &-text {
+            padding: 0 0 0 50px;
+            width: 60%;
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    .main__container .hero__content-text {
+        font-size: 38px;
+    }
+    .about__info-content {
+        flex-direction: column;
+
+        &-img {
+            width: 60%;
+        }
+        &-text {
+            width: 100%;
+            padding: 0;
+            margin: 30px 0 0 0;
+        }
+    }
+    .timeline__container {
+         
+        &::after {
+            left: 31px;
+        }
+        .timeline__listing-content, .timeline .row-5 {
+            justify-content: end !important;
+        }
+        .timeline__listing {
+            
+            &::after {
+                content: "";
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                right: -48px;
+                background-color: #9b8d61;
+                border: 3px solid $color-bg;
+                top: 17px;
+                border-radius: 50%;
+                left: -6px;
+            }
+            &-item {
+                width: 95%;
+
+                &-img {
+                    display: none;
+                }
+    
+                &::after {
+                    display: none;
+                }
+            } 
+        }
+    }
+    .work__form {
+
+        &-text {
+
+            h2 {
+                font-size: 23px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 749px) {
+    .brands__filter {
+        &-card {
+            padding-bottom: 7px;
+
+            &-btn {
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .Navbar-content {
+        width: 100%;
+    }
+
+    .main__container {
+        .hero__content-text {
+            font-size: 30px;
+        }
+        .hero__content-slider {
+            width: 400px;
+    
+            &::before, &::after {
+                width: 10px;
+            }
+        }
+    }
+
+    .networks {
+        padding-top: 50px;
+        position: unset;
+
+        ul {
+            display: flex;
+
+            li {
+                padding-bottom: 0;
+                padding-right: 20px;
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    .about__info-history-img {
+        width: 80%;
+    }
+
+    .about__info-mv {
+        flex-direction: column;
+
+        &-mission, &-vision {
+            width: 100% !important;
+        }
+        &-mission {
+            margin-right: 0;
+            margin-bottom: 50px;
+        }
+    }
+
+    .timeline__container {
+
+        &::after {
+            left: 25px;
+        }
+        .timeline__listing {
+            &::after {
+                left: -12px;
+            }
+        }
+    }
+    .work__form {
+        justify-content: center;
+        align-items: center;
+
+        form {
+            width: 90%;
+        }
+        &-img {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .main__container {
+        .hero__content-slider {
+            width: 300px;
+        }
+    }
+    .work__form {
+
+        form {
+            width: 100%;
+        }
+        &-upload {
+            flex-direction: column-reverse;
+            p {
+                padding-left: 0;
+                padding-bottom: 10px;
+            }
+        }
+    }
+    .work__form form div .btn-file, .work__form form div .form-send {
+        width: 100%;
+    }
+    .brands__filter-card-btn.first {
+        top: -35px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .nav_menu .menu-item-link {
+        font-size: 25px;
+    }
+    .footer.open {
+        bottom: -45px;
+    }
+
+    .brands__category-content{
+        width: 100%;
+        padding-right: 0 !important;
+    }
+    .brands__filter-card-btn button {
+        font-size: 16px;
+    } 
+}

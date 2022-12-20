@@ -1,0 +1,110 @@
+@import "~bootstrap/scss/bootstrap";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #111;
+    color: #ccc;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 1.44;
+    font-weight: 400;
+    position: relative;
+    word-break: break-word;
+}
+ul {
+    margin-bottom: 0;
+    padding-left: 0;
+    li {
+    list-style: none;
+    }
+}
+a {
+    text-decoration: none;
+    color: #ccc;
+    transition: all .3s ease;
+}
+p {
+    margin-bottom: 0;
+}
+h2 {
+    margin-bottom: 0;
+}
+h3 {
+    margin-bottom: 0;
+    color: #fff;
+}
+.box-container {
+    width: 100%;
+    max-width: 1360px;
+    padding: 0 80px;
+    margin: 0 auto;
+}
+
+$color-bg: #E4D192;
+$color-text: #ccc;
+
+@font-face {
+    font-family: 'GG';
+    src: url(../../font/rockoultraflf-bold.ttf);
+}
+.p-t {
+    padding-top: 150px;
+}
+.p-b {
+    padding-bottom: 100px;
+}
+.row-reverse {
+    flex-direction: row-reverse;
+}
+.visible {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    transition-delay: 0.2s !important;
+}
+input, textarea {
+    outline: 0;
+}
+.p-relative {
+    position: relative;
+    z-index: 1;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+::selection {
+    color: #000;
+    background: #fff;
+}
+
+@import "./parciales/spinner";
+@import "./parciales/loading-transition";
+@import "./parciales/header";
+@import "./parciales/icon-scroll";
+@import "./parciales/main";
+@import "./parciales/networks";
+@import "./parciales/about";
+@import "./parciales/timeline";
+@import "./parciales/work";
+@import "./parciales/contact";
+@import "./parciales/brands";
+@import "./parciales/media-queries";
